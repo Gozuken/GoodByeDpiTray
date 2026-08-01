@@ -4,9 +4,10 @@ GoodbyeDPI'yi sistem tepsi alanında (system tray) çalıştırarak arka planda 
 
 ## Özellikler
 
-- GoodbyeDPI'yi otomatik olarak arka planda başlatır (TTL 3)
-- Sistem tepsisinde simge olarak gösterilir
-- Sağ tık menüsü ile çıkış yapabilirsiniz
+- GoodbyeDPI'yi otomatik olarak arka planda başlatır (varsayılan: TTL 3)
+- Sistem tepsisinde simge olarak gösterilir, durum (çalışıyor/durdu) ipucunda görünür
+- **Mod Seçimi:** Sağ tık menüsünden farklı GoodbyeDPI modları arasında geçiş yapabilirsiniz (TTL 3/7, Auto TTL, Fake-SND, Desync, Disorder)
+- **Başlat / Durdur / Yeniden Başlat** kontrolleri sağ tık menüsünden yapılabilir
 - Tek instance kontrolü (çift çalışmayı engeller)
 - Konsol penceresi açılmaz
 
