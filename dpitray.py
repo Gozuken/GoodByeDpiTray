@@ -106,12 +106,18 @@ def on_quit(app, icon):
     icon.stop()
 
 
+def _make_mode_action(mode):
+    def action(icon, item):
+        switch_mode(app, icon, mode)
+    return action
+
+
 def build_menu(app, icon):
     mode_menu = pystray.Menu(
         *[
             pystray.MenuItem(
                 mode["name"],
-                lambda icon, item, m=mode: switch_mode(app, icon, m),
+                _make_mode_action(mode),
                 checked=lambda item, m=mode: app.current_mode["name"] == m["name"],
                 radio=True,
             )
@@ -152,7 +158,7 @@ icon = pystray.Icon(
     "goodbyedpi",
     Image.open(ICON_PATH),
     f"GoodbyeDPI ({app.current_mode['name']}) - {'Çalışıyor' if app.running else 'Durdu'}",
-    menu=lambda: build_menu(app, icon),
+    menu=build_menu(app, None),
 )
 
 icon.run()
