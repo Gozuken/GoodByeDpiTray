@@ -152,7 +152,7 @@ app.start()
 
 if app.error:
     ctypes.windll.user32.MessageBoxW(None, app.error, "GoodbyeDPI Tray", 0x30)
-    app.error = None
+    sys.exit(1)
 
 icon = pystray.Icon(
     "goodbyedpi",
